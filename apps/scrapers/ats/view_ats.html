@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Данные АТС</h1>
+
+    <form action="#" method="get">
+        <input type="submit" class="btn" value="ЗАГРУЗИТЬ ДАННЫЕ" name="refreshBtn">
+        <input type="submit" class="btn" value="УДАЛИТЬ ВСЕ" name="deleteBtn">        
+    </form>
+
+    <bR>
+    <br>
+
+    <table>
+        <tr>
+            <th>Дата</th>
+            <th>Ценовая зона</th>
+            <th>Индекс РСВ на покупку руб./МВт*ч</th>
+            <th>Объем полного планового потребления, МВт*ч</th>
+            <th>ТЭС</th>
+            <th>ГЭС</th>      
+            <th>АЭС</th>
+            <th>СЭС/ВЭС</th>                    
+        </tr>
+        {% for item in list %}
+        <tr>
+            <td>{{ item.observation_date }}</td>
+            <td>{{ item.price_zone_code }}</td>
+            <td>{{ item.consumer_price }}$</td>
+            <td>{{ item.consumer_volume }}</td>
+            <td>{{ item.thermal_volume }}</td>
+            <td>{{ item.hydro_volume }}$</td>        
+            <td>{{ item.atomic_volume }}</td>
+            <td>{{ item.renewable_volume }}$</td>                 
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>
