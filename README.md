@@ -16,13 +16,13 @@
 Задача 3 - запуск приложения
 ============================
 
-1. Активровать venv
+1. Активировать venv
 
 source ./venv/bin/activate
 
 2. Запуск
 
-python3 manage.py start
+python3 manage.py runserver
 
 
 Описание
